@@ -38,7 +38,7 @@ pub type SchoolPerson {
   Student(name: String)
 }
 
-pub fn greet(person: SchoolPerson) -> String {
+fn greet(person: SchoolPerson) -> String {
   case person {
     Teacher(name, subject) -> "Teacher: " <> name <> " " <> subject
     Student(name) -> "Student: " <> name
@@ -49,8 +49,8 @@ pub fn get_school_person() -> SchoolPerson {
   let teacher = Teacher("John", "Math")
   let student = Student("Jane")
 
-  echo teacher
-  echo student
+  echo teacher |> greet
+  echo student |> greet
   // echo student.subject -> error
 
   teacher
